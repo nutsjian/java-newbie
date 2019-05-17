@@ -1,0 +1,47 @@
+1. 中间操作 Intermediate Operation
+2. 终结操作 Terminal Operation
+
+一、以上这两种操作，外加数据源就构成了所谓的 pipeline，处理管道。
+
+二、中间操作（Intermediate Operation）会返回一个流，中间操作是一个懒操作，并不会立即执行。比如 filter，执行中间操作 filter 的时候实际上没有进行任何的过滤操作，而是创建了一个新的流，
+这个新流包含啥呢？包含的是遍历原来流（initial stream）过程中符合筛选条件的元素。需要注意的是：中间操作在 pipeline 执行到终结操作之前是不会开始执行的。
+
+三、终结操作（Terminal Operation）是 eager 的，也就是说，执行到终结操作的时候我就要开始遍历数据源并且执行中间操作这个过程了，不会再去等谁了。而且一旦 pipeline 中的终结操作完成了，
+那么这个 pipeline 的使命就完成了，如果你还有新的终结操作，对不起，这个旧的 pipeline 就用不了了，你得新建一个 Stream，重来一次。
+
+四、为什么要“懒”执行（中间操作）？效率高，将中间操作融合在一起，使操作对对象的状态改变最小化，而且还能使我们避免一些没必要的工作。举个例子：在一堆字符串里面找出第一个含超过1000个字符的
+字符串，通过 stream operation 的 laziness 那么我们就不用遍历全部元素了，只需执行能找出满足条件的元素的操作就行。
+
+
+3. 操作分类
+3.1 中间操作（Intermediate Operation）
+    map
+    mapToInt
+    flatMap
+
+    filter
+    distinct
+    sorted
+    peek
+    limit
+    skip
+    parallel
+    sequential
+    unordered
+
+3.2 终结操作（Terminal Operation）
+    forEach
+    forEachOrdered
+    toArray
+    reduce
+    collect
+    min
+    max
+    count
+    anyMatch
+    allMatch
+    noneMatch
+    findFirst
+    findAny
+    iterator
+

@@ -1,0 +1,16 @@
+1. 当你处理完流时，通常只是想查看一下结果，而不是将他们聚合为一个值。先看 collect 的基础方法，它接收三个参数：
+方法：R collect(Supplier supplier, BiConsumer accumulator, BiConsumer combiner);
+参数说明：
+    - supplier：一个能创造目标类型实例的方法
+    - accumulator：一个将当前元素添加到目标中的方法
+    - combiner：一个将中间状态的多个结果整合到一起的方法（并发的时候会用到）
+
+
+2. Supplier
+
+
+3. BiConsumer
+
+
+
+4. Bi

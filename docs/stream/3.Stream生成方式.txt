@@ -1,0 +1,5 @@
+1. BufferedReader.lines()
+
+2. IntStream
+   LongStream
+   DoubleStream

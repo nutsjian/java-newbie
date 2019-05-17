@@ -1,0 +1,5 @@
+1. StreamEx01.java 用来演示筛选（Filter）、排序（Sort）
+2. StreamEx02.java 用来演示map的使用
+
+5. StreamEx05.java 用来演示 map 和 flatMap 的区别
+6. StreamEx06.java 演示 IntStream LongStream DoubleStream 的基本使用

@@ -1,0 +1,11 @@
+@FunctionalInterface
+public interface Supplier<T> {
+    T get();
+}
+
+
+BooleanSupplier
+DoubleSupplier
+IntSupplier
+LongSupplier
+

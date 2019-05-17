@@ -1,0 +1,23 @@
+Predicate
+    ========================================函数定义========================================
+    @FunctionalInterface
+    public interface Predicate<T> {
+
+        /**
+         * Evaluates this predicate on the given argument.
+         *
+         * @param t the input argument
+         * @return {@code true} if the input argument matches the predicate,
+         * otherwise {@code false}
+         */
+        boolean test(T t);
+    }
+
+    1. 描述：该函数式接口提供了一个 test() 方法，接收一个参数返回一个 boolean 类型
+    2. 作用：对传入的参数进行判断，这在 stream api 中进行一些判断的时候非常有用
+
+
+
+    x. 使用案例：
+        - PredicateEx01：stream() 的 filter 中使用，并且演示了 and() or() negate() 三个默认方法的使用
+        - PredicateEx02：
